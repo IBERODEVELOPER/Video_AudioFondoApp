@@ -17,11 +17,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         /*Para el video*/
         VideoView videoup=(VideoView)findViewById(R.id.Videovup);
-
+        //capturamos la orientacion del dispositivo
         int orientacion = getResources().getConfiguration().orientation;
+        //consultamos si el dispositivo ests en LANDSCAPE
         if(orientacion == Configuration.ORIENTATION_LANDSCAPE){
+            //ocultamos el action bar
            getSupportActionBar().hide();
-        }else{
+        }else{//mostramos el action bar
             getSupportActionBar().show();
         }
         //activamos el controlador
