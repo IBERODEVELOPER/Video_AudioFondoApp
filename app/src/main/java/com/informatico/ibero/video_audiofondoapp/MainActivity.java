@@ -2,6 +2,7 @@ package com.informatico.ibero.video_audiofondoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         /*Para el video*/
         VideoView videoup=(VideoView)findViewById(R.id.Videovup);
+
+        int orientacion = getResources().getConfiguration().orientation;
+        if(orientacion == Configuration.ORIENTATION_LANDSCAPE){
+           getSupportActionBar().hide();
+        }else{
+            getSupportActionBar().show();
+        }
         //activamos el controlador
         MediaController mc = new MediaController(this);
         mc.setAnchorView(videoup);
